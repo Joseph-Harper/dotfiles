@@ -21,3 +21,9 @@ for file in $FILES; do
 	echo "Creating symlink to $file in home directory."
 	ln -s $BASEDIR/$file ~/.$file
 done
+
+# Clone gruvbox if it doesn't exist
+if [ ! -d ~/.vim/pack/default/start/gruvbox ]; then
+	echo "Cloning https://github.com/morhetz/gruvbox.git..."
+	git clone https://github.com/morhetz/gruvbox.git ~/.vim/pack/default/start/gruvbox
+fi
